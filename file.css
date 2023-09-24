@@ -18,6 +18,8 @@
     --elevation-low: 0;
     --gap: 16px;
     --custom-category-channel-space-before-category: 10px;
+    --bg-overlay-selected: #1a1a1a;
+    --bg-overlay-hover: #1a1a1a;
     /* Control font size and line spacing from Appearance settings */
 }
 
@@ -133,7 +135,17 @@
     color: #535353;
     background: var(--background-primary);
     position: absolute;
-    margin: -11px 4px; /*- 8 (center) idk why 11, 4*/
+    margin: -27px 4px; /*- 8 (center) idk why 11 - 16, 4*/
+    padding: 0 3px;
+    bottom: 0;
+}
+
+[class*="chat-"] > [class*="title-"] > [class*="upperContainer-"] > [class*="children-"]::before {
+    content: "Topic";
+    color: #535353;
+    background: var(--background-primary);
+    position: absolute;
+    margin: -11px 4px; /*- 8 (center) idk why 11 - 16, 4*/
     padding: 0 3px;
     top: 0;
 }
