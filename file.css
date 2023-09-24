@@ -17,11 +17,14 @@
     --elevation-border: 0;
     --elevation-low: 0;
     --gap: 16px;
+    --custom-category-channel-space-before-category: 10px;
     /* Control font size and line spacing from Appearance settings */
 }
 
-.markup-eYLPri code {
+.markup-eYLPri code,
+[class*="channelTextArea-"] > [class*="scrollableContainer-"] {
     background: #1a1a1a;
+    border-radius: 0;
 }
 
 /* membercount plugin */
@@ -64,6 +67,10 @@
     display: none !important;
 }
 
+[class*="listItem-"]:has([class*="guildSeparator-"]) {
+    display: none;
+}
+
 /*
 [class*="container-"] > [class*="base-"],
 [class*="container-"] > [class*="guilds-"] {
@@ -91,6 +98,11 @@
     padding-top: var(--gap);
     padding-bottom: var(--gap);
     overflow: visible;
+}
+
+[class*="membersGroup"] {
+    padding: var(--custom-category-channel-space-before-category) 8px 0 16px;
+    height: calc(var(--custom-category-channel-space-before-category) + 16px);
 }
 
 [class*="sidebar-"]::before {
@@ -132,6 +144,16 @@
     background: var(--background-primary);
     position: absolute;
     margin: -11px 4px; /*8 (center) idk why 11 , 4*/
+    padding: 0 3px;
+    top: 0;
+}
+
+[class*="chat-"] > [class*="content-"] > [class*="chatContent-"]::before {
+    content: "Chat";
+    color: #535353;
+    background: var(--background-primary);
+    position: absolute;
+    margin: -8px 4px; /*- 8 (center) , 4*/
     padding: 0 3px;
     top: 0;
 }
@@ -239,15 +261,13 @@
   background-color: var(--channeltextarea-background);
 }
 
-/*
-button[aria-label="Send a gift"],
-.expression-picker-chat-input-button:not(:last-child) {
-    display: none;
-}
 
+
+button[aria-label="Send a gift"],
+button[aria-label="Open GIF picker"],
+button[aria-label="Open sticker picker"],
 div[aria-label="Add Super Reaction"],
 div[id="message-add-reaction-1"],
 div[aria-label="Enable more fun reactions with Nitro"] {
     display: none;
 }
-*/
